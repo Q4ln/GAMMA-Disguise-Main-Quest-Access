@@ -1,0 +1,17 @@
+GAMMA Disguise Main Quest Access
+Copyright (c) 2026 Q4ln
+
+The original code and assets of this mod are by Q4ln and are licensed under
+the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+licence (CC BY-NC-SA 4.0):
+https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+
+Third-party mods that this mod integrates with, and any third-party assets it
+uses or ships, are not covered by this licence and remain under their own
+authors' terms.
+
+This mod ships edited copies of dialogs.xml, dialogs_lostzone_ll.xml,
+dialogs_lostzone_ms.xml and dialogs_lostzone_oa.xml, by the S.T.A.L.K.E.R.
+Anomaly team, DoctorX and the G.A.M.M.A. contributors, and of
+tasks_urgent_orders.script from New Tasks by iTheon. Those files remain under
+their authors' terms.
