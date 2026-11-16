@@ -1,6 +1,6 @@
 # GAMMA Disguise Main Quest Access
 
-Version `d2026.11.9.1`
+Version `d2026.11.16.1`
 
 Lets a G.A.M.M.A. character take the main story lines while wearing a faction
 disguise. Anomaly opens these conversations only for the faction you really
@@ -22,6 +22,17 @@ real faction to your current one, which is the disguise when you wear one:
   and the Army does the same in Agroprom, at most once every five days. Once you
   have it, the task remembers which of the two gave it, so changing your
   disguise does not make its messages come from the wrong leader.
+
+It also opens Operation Afterglow for a character whose real faction has no
+story line of its own, such as a Renegade or a Bandit. Anomaly announces
+Afterglow by PDA news, which it sends only when your real faction is Loners,
+Duty, Freedom, Clear Sky, Ecologists or Mercenaries. For anyone else this mod
+opens it as soon as Mortal Sin's last talk with the leader is done, or when you
+load a save made after that talk. There is no PDA message in that case. Take
+Afterglow from the leader whose disguise you wear, like the other story lines,
+and keep a story faction's disguise on for the whole of it: Colonel Degtyarev
+and the military on Jupiter and in Pripyat treat Renegades and Bandits as
+enemies, so they will not talk to you and will fight back.
 
 Wear the disguise when you talk to the leader, and when you arrive on the level
 for Urgent Orders. Any suit of another faction counts as a disguise unless its
@@ -59,8 +70,11 @@ What it deliberately leaves alone:
 - It ships whole copies of `dialogs.xml`, `dialogs_lostzone_ll.xml`,
   `dialogs_lostzone_ms.xml`, `dialogs_lostzone_oa.xml` and
   `tasks_urgent_orders.script`, each GAMMA's or Anomaly's own file with only
-  the changes above. If another mod ships one of these files, whichever sits
-  lower in MO2 wins and the other's changes to that file are lost. GAMMA's
+  the changes above. It also adds one script of its own,
+  `gamma_disguise_afterglow.script`, which replaces no file and only reacts to
+  Anomaly's own game events. If another mod ships one of the five replaced
+  files, whichever sits lower in MO2 wins and the other's changes to that file
+  are lost. GAMMA's
   optional `Pre-0.9.3.1 Saves Fix` (`tasks_urgent_orders.script`) and
   `G.A.M.M.A. Companions Rework` (`dialogs.xml`), both off by default, are such
   mods.
@@ -87,24 +101,31 @@ script ignores. An Urgent Orders task taken before you added the mod picks who
 sends its messages from your current disguise. Neither adding nor removing has
 been tested in game.
 
+A character whose real faction has no story line and who finished Mortal Sin
+with an earlier version of this mod gets Operation Afterglow as soon as this
+version is installed and the save is loaded. Removing the mod leaves that flag
+in the save, but without the mod no leader offers Afterglow to such a
+character, so take it and finish it before removing the mod.
+
 ## Uninstall
 
 Disable or remove the mod in MO2, after reading the section above. Saves keep
-the one extra Urgent Orders value, which the original script ignores. Nothing
-else is left behind.
+the one extra Urgent Orders value, which the original script ignores, and the
+Operation Afterglow flag described above. Nothing else is left behind.
 
 ## Known issues
 
-- This build has had four short scripted runs in game, each on one save, with
-  no errors from this mod in the log. In the last two, a real Loner put on a
-  Clear Sky suit where nobody saw it, the game's own disguise took effect, and,
-  with the test script placing him beside Cold, Cold offered the first talk
-  about the story quest lines, which he had not offered before. Choosing it
-  gave Cold's briefing, and Living Legend's first topic appeared. In another
-  run, with the faction switched by script, the story conditions and Urgent
-  Orders' choice of leader followed it. No story line was played through and
-  no Urgent Orders task was given in game. The four dialogue files carry the same changes as the
-  copy the author has had installed since July 2026.
+- The five replaced files, unchanged since the previous release, have had four
+  short scripted runs in game, each on one save, with no errors from this mod in
+  the log. In the last two, a real Loner put on a Clear Sky suit where nobody
+  saw it, the game's own disguise took effect, and, with the test script placing
+  him beside Cold, Cold offered the first talk about the story quest lines,
+  which he had not offered before. Choosing it gave Cold's briefing, and Living
+  Legend's first topic appeared. In another run, with the faction switched by
+  script, the story conditions and Urgent Orders' choice of leader followed it.
+  No story line was played through and no Urgent Orders task was given in game.
+  The four dialogue files carry the same changes as the copy the author has had
+  installed since July 2026.
 - Stay with one leader for a whole story line. The leaders' report conversations
   check only your current faction and your progress, not who gave you the line,
   so changing or removing the disguise can show another leader's report. At the
@@ -112,13 +133,23 @@ else is left behind.
   journal task and reward stay open until you go back to them in their disguise.
   In Mortal Sin it moves the next step to the new leader, while later steps
   still point at the first one.
-- Some story lines still depend on your real faction, because Anomaly decides
-  them outside these conversations. Operation Afterglow only opens for a
-  character whose real faction is Loners, Duty, Freedom, Clear Sky, Ecologists
-  or Mercenaries. Monolith and Sin characters cannot start Mortal Sin, because a
-  new game marks it as already started for them.
+- Monolith and Sin characters cannot start Mortal Sin, because a new game
+  marks it as already started for them; Anomaly decides that outside these
+  conversations.
+- A character whose real faction has no story line gets no PDA message when
+  Operation Afterglow opens, nor the later PDA tip that points to Degtyarev on
+  Jupiter. Nothing in the story depends on either message.
+- The Afterglow change has only been tested against stand-ins for the game,
+  not in game.
 
 ## Changelog
+
+### d2026.11.16.1
+
+- Operation Afterglow now opens for characters whose real faction has no story
+  line, such as Renegades, once Mortal Sin's last talk with the leader is done.
+  Anomaly opens it only for Loners, Duty, Freedom, Clear Sky, Ecologists and
+  Mercenaries. Saves that already finished Mortal Sin get it when loaded.
 
 ### d2026.11.9.1
 
